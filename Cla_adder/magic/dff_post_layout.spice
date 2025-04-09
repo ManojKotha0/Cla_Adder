@@ -1,0 +1,343 @@
+* SPICE3 file created from krish1.ext - technology: scmos
+
+.option scale=0.09u
+
+M1000 a_1166_1023# b0 Gnd Gnd CMOSN w=20 l=2
++  ad=200 pd=100 as=6000 ps=2860
+M1001 a_1687_344# P3 a_1694_344# w_1680_334# CMOSP w=40 l=2
++  ad=1160 pd=298 as=960 ps=208
+M1002 sum1 a_1459_974# a_1489_986# w_1483_976# CMOSP w=20 l=2
++  ad=200 pd=100 as=300 ps=140
+M1003 C2 a_1652_714# VDD w_1638_746# CMOSP w=40 l=2
++  ad=300 pd=140 as=9400 ps=4170
+M1004 b0 a_1136_1011# sum0 Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1005 a_1459_974# C0 VDD w_1446_1004# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1006 a_1536_722# P1 Gnd Gnd CMOSN w=40 l=2
++  ad=760 pd=118 as=0 ps=0
+M1007 a_1881_33# C3 Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1008 a_1728_1018# C2 VDD w_1798_1035# CMOSP w=40 l=2
++  ad=300 pd=140 as=0 ps=0
+M1009 C2 a_1698_1006# sum2 Gnd CMOSN w=20 l=2
++  ad=200 pd=100 as=200 ps=100
+M1010 g3 a_1325_256# VDD w_1312_246# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1011 g1 a_1300_755# VDD w_1287_745# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1012 Gnd a_1582_749# a_1652_714# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=200 ps=100
+M1013 a_1310_510# b2 VDD w_1297_500# CMOSP w=40 l=2
++  ad=760 pd=118 as=0 ps=0
+M1014 a_1171_230# b3 VDD w_1241_247# CMOSP w=40 l=2
++  ad=300 pd=140 as=0 ps=0
+M1015 a_1898_504# g2 Gnd Gnd CMOSN w=20 l=2
++  ad=300 pd=150 as=0 ps=0
+M1016 a_1568_109# a_1517_107# a_1568_88# w_1558_25# CMOSP w=160 l=2
++  ad=1600 pd=660 as=1600 ps=660
+M1017 a_1694_344# g1 a_1687_344# w_1680_334# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1018 a_1500_319# P2 a_1507_319# w_1493_309# CMOSP w=40 l=2
++  ad=1360 pd=388 as=1520 ps=236
+M1019 g2 a_1310_510# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1020 a_1919_545# a_1606_526# a_1898_545# w_1884_536# CMOSP w=120 l=2
++  ad=1200 pd=500 as=1200 ps=500
+M1021 a_1898_504# a_1780_539# Gnd Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1022 a_1715_257# P3 a_1694_257# Gnd CMOSN w=60 l=2
++  ad=600 pd=260 as=600 ps=260
+M1023 a_1734_579# g1 VDD w_1720_569# CMOSP w=40 l=2
++  ad=760 pd=118 as=0 ps=0
+M1024 P1 C0 sum1 w_1516_1009# CMOSP w=20 l=2
++  ad=300 pd=150 as=0 ps=0
+M1025 a_1918_346# g2 VDD w_1904_336# CMOSP w=40 l=2
++  ad=760 pd=118 as=0 ps=0
+M1026 a_1694_344# P2 a_1687_344# w_1680_334# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1027 C3 a_1898_504# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1028 a_1568_67# a_1517_65# a_1521_67# w_1558_25# CMOSP w=160 l=2
++  ad=1600 pd=660 as=800 ps=330
+M1029 a_1507_212# P1 Gnd Gnd CMOSN w=80 l=2
++  ad=800 pd=340 as=0 ps=0
+M1030 VDD G3 a_1568_109# w_1558_25# CMOSP w=160 l=2
++  ad=0 pd=0 as=0 ps=0
+M1031 a_1320_982# b0 Gnd Gnd CMOSN w=40 l=2
++  ad=760 pd=118 as=0 ps=0
+M1032 a_1698_1006# P2 Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1033 a_1300_755# a1 a_1300_688# Gnd CMOSN w=40 l=2
++  ad=200 pd=90 as=760 ps=118
+M1034 a_1536_789# C0 a_1536_722# Gnd CMOSN w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1035 P2 a_1126_472# a_1156_484# w_1150_474# CMOSP w=20 l=2
++  ad=200 pd=100 as=300 ps=140
+M1036 sum2 a_1698_1006# a_1728_1018# w_1722_1008# CMOSP w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1037 a_1517_65# a_1918_346# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1038 a_1898_545# g2 VDD w_1884_536# CMOSP w=120 l=2
++  ad=0 pd=0 as=0 ps=0
+M1039 VDD a2 a_1310_510# w_1297_500# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1040 a_1568_88# a_1517_86# a_1568_67# w_1558_25# CMOSP w=160 l=2
++  ad=0 pd=0 as=0 ps=0
+M1041 a_1517_86# a_1694_344# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1042 a_1694_257# g1 Gnd Gnd CMOSN w=60 l=2
++  ad=0 pd=0 as=0 ps=0
+M1043 b2 a_1126_472# P2 Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1044 a_1582_749# a_1536_789# VDD w_1522_779# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1045 a_1521_67# a_1517_65# Gnd Gnd CMOSN w=20 l=2
++  ad=400 pd=200 as=0 ps=0
+M1046 b3 a_1141_218# P3 Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=300 ps=150
+M1047 a_1898_504# a_1780_539# a_1919_545# w_1884_536# CMOSP w=120 l=2
++  ad=600 pd=250 as=0 ps=0
+M1048 a_1694_344# P2 a_1715_257# Gnd CMOSN w=60 l=2
++  ad=300 pd=130 as=0 ps=0
+M1049 VDD P3 a_1918_346# w_1904_336# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1050 VDD P1 a_1734_579# w_1720_569# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1051 a_1911_45# P3 Gnd Gnd CMOSN w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1052 a_1300_688# b1 Gnd Gnd CMOSN w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1053 sum2 P2 a_1728_1018# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=200 ps=100
+M1054 a_1325_189# b3 Gnd Gnd CMOSN w=40 l=2
++  ad=760 pd=118 as=0 ps=0
+M1055 VDD a_1521_67# C4 w_1558_25# CMOSP w=40 l=2
++  ad=0 pd=0 as=200 ps=90
+M1056 C0 a_1320_1049# VDD w_1307_1039# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1057 a_1528_212# C0 a_1507_212# Gnd CMOSN w=80 l=2
++  ad=800 pd=340 as=0 ps=0
+M1058 a_1320_1049# a0 a_1320_982# Gnd CMOSN w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1059 Gnd a_1517_86# a_1521_67# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1060 a_1320_1049# b0 VDD w_1307_1039# CMOSP w=40 l=2
++  ad=760 pd=118 as=0 ps=0
+M1061 P2 a2 a_1156_484# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=200 ps=100
+M1062 sum1 C0 a_1489_986# Gnd CMOSN w=20 l=2
++  ad=200 pd=100 as=200 ps=100
+M1063 a_1156_484# b2 VDD w_1226_501# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1064 a_1126_472# a2 VDD w_1113_502# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1065 a_1136_1011# a0 VDD w_1123_1041# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1066 a_1141_218# a3 Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1067 a_1116_717# a1 Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1068 a_1146_729# b1 Gnd Gnd CMOSN w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1069 a_1780_539# a_1734_579# VDD w_1720_569# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1070 a_1521_67# a_1517_107# Gnd Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1071 P3 C3 sum3 w_1938_68# CMOSP w=20 l=2
++  ad=300 pd=150 as=200 ps=100
+M1072 a_1518_566# C0 a_1511_566# w_1504_556# CMOSP w=40 l=2
++  ad=960 pd=208 as=1160 ps=298
+M1073 a_1325_256# a3 a_1325_189# Gnd CMOSN w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1074 a_1166_1023# b0 VDD w_1236_1040# CMOSP w=40 l=2
++  ad=300 pd=140 as=0 ps=0
+M1075 a_1734_512# g1 Gnd Gnd CMOSN w=40 l=2
++  ad=760 pd=118 as=0 ps=0
+M1076 a_1549_212# P3 a_1528_212# Gnd CMOSN w=80 l=2
++  ad=800 pd=340 as=0 ps=0
+M1077 P3 a_1141_218# a_1171_230# w_1165_220# CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1078 b0 a0 sum0 w_1193_1046# CMOSP w=20 l=2
++  ad=100 pd=50 as=200 ps=100
+M1079 Gnd G3 a_1521_67# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1080 a_1881_33# C3 VDD w_1868_63# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1081 a_1517_107# a_1507_319# a_1500_319# w_1493_309# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1082 sum3 a_1881_33# a_1911_45# w_1905_35# CMOSP w=20 l=2
++  ad=0 pd=0 as=300 ps=140
+M1083 C2 P2 sum2 w_1755_1041# CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1084 b1 a_1116_717# P1 Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=300 ps=150
+M1085 a_1606_526# a_1518_566# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1086 a_1518_479# C0 Gnd Gnd CMOSN w=60 l=2
++  ad=600 pd=260 as=0 ps=0
+M1087 VDD a0 a_1320_1049# w_1307_1039# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1088 P3 a3 a_1171_230# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=200 ps=100
+M1089 a_1511_566# P2 a_1518_566# w_1504_556# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1090 C2 a_1652_714# Gnd Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1091 sum3 C3 a_1911_45# Gnd CMOSN w=20 l=2
++  ad=200 pd=100 as=0 ps=0
+M1092 C3 a_1898_504# VDD w_1884_536# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1093 a_1310_443# b2 Gnd Gnd CMOSN w=40 l=2
++  ad=760 pd=118 as=0 ps=0
+M1094 a_1734_579# P1 a_1734_512# Gnd CMOSN w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1095 a_1728_1018# C2 Gnd Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1096 a_1507_319# P2 a_1549_212# Gnd CMOSN w=80 l=2
++  ad=400 pd=170 as=0 ps=0
+M1097 g2 a_1310_510# VDD w_1297_500# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1098 sum0 a_1136_1011# a_1166_1023# w_1160_1013# CMOSP w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1099 g3 a_1325_256# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1100 g1 a_1300_755# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1101 a_1698_1006# P2 VDD w_1685_1036# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1102 a_1171_230# b3 Gnd Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1103 a_1918_279# g2 Gnd Gnd CMOSN w=40 l=2
++  ad=760 pd=118 as=0 ps=0
+M1104 Gnd a_1521_67# C4 Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=100 ps=50
+M1105 a_1517_65# a_1918_346# VDD w_1904_336# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1106 a_1507_319# P1 a_1500_319# w_1493_309# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1107 a_1517_86# a_1694_344# a_1687_344# w_1765_334# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1108 VDD a1 a_1300_755# w_1287_745# CMOSP w=40 l=2
++  ad=0 pd=0 as=760 ps=118
+M1109 a_1459_974# C0 Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1110 a_1539_479# P2 a_1518_479# Gnd CMOSN w=60 l=2
++  ad=600 pd=260 as=0 ps=0
+M1111 sum0 a0 a_1166_1023# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1112 b3 a3 P3 w_1198_253# CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1113 a_1518_566# P1 a_1511_566# w_1504_556# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1114 P1 a_1116_717# a_1146_729# w_1140_719# CMOSP w=20 l=2
++  ad=0 pd=0 as=300 ps=140
+M1115 a_1536_789# P1 VDD w_1522_779# CMOSP w=40 l=2
++  ad=760 pd=118 as=0 ps=0
+M1116 a_1911_45# P3 VDD w_1981_62# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1117 a_1310_510# a2 a_1310_443# Gnd CMOSN w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1118 b2 a2 P2 w_1183_507# CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1119 a_1652_756# G1 VDD w_1638_746# CMOSP w=80 l=2
++  ad=800 pd=340 as=0 ps=0
+M1120 a_1300_755# b1 VDD w_1287_745# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1121 a_1325_256# b3 VDD w_1312_246# CMOSP w=40 l=2
++  ad=760 pd=118 as=0 ps=0
+M1122 a_1918_346# P3 a_1918_279# Gnd CMOSN w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1123 P1 a1 a_1146_729# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1124 a_1582_749# a_1536_789# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1125 P1 a_1459_974# sum1 Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1126 a_1500_319# C0 a_1507_319# w_1493_309# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1127 a_1141_218# a3 VDD w_1128_248# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1128 a_1116_717# a1 VDD w_1103_747# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1129 a_1146_729# b1 VDD w_1216_746# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1130 a_1518_566# P1 a_1539_479# Gnd CMOSN w=60 l=2
++  ad=300 pd=130 as=0 ps=0
+M1131 a_1489_986# P1 VDD w_1559_1003# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1132 C0 a_1320_1049# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1133 VDD C0 a_1536_789# w_1522_779# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1134 a_1156_484# b2 Gnd Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1135 a_1126_472# a2 Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1136 a_1652_714# a_1582_749# a_1652_756# w_1638_746# CMOSP w=80 l=2
++  ad=400 pd=170 as=0 ps=0
+M1137 a_1652_714# G1 Gnd Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1138 a_1136_1011# a0 Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1139 VDD a3 a_1325_256# w_1312_246# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1140 a_1489_986# P1 Gnd Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1141 a_1780_539# a_1734_579# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1142 a_1507_319# P3 a_1500_319# w_1493_309# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1143 b1 a1 P1 w_1173_752# CMOSP w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1144 P3 a_1881_33# sum3 Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1145 Gnd a_1606_526# a_1898_504# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1146 a_1517_107# a_1507_319# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1147 a_1606_526# a_1518_566# a_1511_566# w_1588_556# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+C0 VDD C0 2.98fF
+C1 P3 P2 2.04fF
+C2 Gnd Gnd 22.08fF
+C3 a_1911_45# Gnd 2.59fF
+C4 VDD Gnd 19.34fF
+C5 a_1171_230# Gnd 2.59fF
+C6 b3 Gnd 2.48fF
+C7 a_1517_65# Gnd 2.25fF
+C8 a_1517_86# Gnd 2.85fF
+C9 a3 Gnd 3.72fF
+C10 P3 Gnd 21.57fF
+C11 C3 Gnd 4.93fF
+C12 a_1156_484# Gnd 2.59fF
+C13 b2 Gnd 2.48fF
+C14 a2 Gnd 3.72fF
+C15 g2 Gnd 4.83fF
+C16 a_1606_526# Gnd 4.27fF
+C17 g1 Gnd 5.19fF
+C18 a_1146_729# Gnd 2.59fF
+C19 b1 Gnd 2.48fF
+C20 a1 Gnd 3.72fF
+C21 a_1728_1018# Gnd 2.59fF
+C22 C2 Gnd 3.63fF
+C23 a_1489_986# Gnd 2.59fF
+C24 P1 Gnd 18.86fF
+C25 P2 Gnd 33.55fF
+C26 C0 Gnd 11.50fF
+C27 sum0 Gnd 2.41fF
+C28 a_1166_1023# Gnd 2.59fF
+C29 b0 Gnd 2.48fF
+C30 a0 Gnd 3.72fF
+C31 w_1558_25# Gnd 21.83fF
+C32 w_1312_246# Gnd 4.49fF
+C33 w_1904_336# Gnd 4.56fF
+C34 w_1680_334# Gnd 4.24fF
+C35 w_1493_309# Gnd 7.21fF
+C36 w_1884_536# Gnd 13.40fF
+C37 w_1720_569# Gnd 4.56fF
+C38 w_1504_556# Gnd 4.24fF
+C39 w_1297_500# Gnd 4.49fF
+C40 w_1638_746# Gnd 7.30fF
+C41 w_1287_745# Gnd 4.49fF
+C42 w_1307_1039# Gnd 4.49fF

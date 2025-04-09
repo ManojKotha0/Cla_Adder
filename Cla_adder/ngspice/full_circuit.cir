@@ -1,0 +1,257 @@
+.include TSMC_180nm.txt
+.param SUPPLY=1.8
+.param LAMBDA=0.09u
+.global gnd vdd
+
+Vdd	vdd	gnd	'SUPPLY'
+vin1 a00 0 pulse 0 1.8 0ns 0ns 0ns 10ns 20ns
+vin2 b00 0 pulse 1.8 0 0ns 0ns 0ns 10ns 20ns
+
+vin3 a11 0 pulse 0 1.8 0ns 0ns 0ns 10ns 20ns
+vin4 b11 0 pulse 1.8 0 0ns 0ns 0ns 10ns 20ns
+
+vin5 a22 0 pulse 0 1.8 0ns 0ns 0ns 10ns 20ns
+vin6 b22 0 pulse 1.8 0 0ns 0ns 0ns 10ns 20ns
+
+vin7 a33 0 pulse 1.8 0 0ns 0ns 0ns 10ns 20ns
+vin8 b33 0 pulse 0 1.8 0ns 0ns 0ns 10ns 20ns
+
+vin9 Cin1 0 pulse 1.8 0 0ns 0ns 0ns 10ns 20ns
+
+.param width_P={20*LAMBDA}
+.param width_N={10*LAMBDA}
+
+Vclk clk 0 PULSE(0 1.8 0ns 0ns 0ns 4ns 8ns)
+
+
+.subckt inv y x vdd gnd
+M1_inv      y       x       gnd     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+M2_inv      y       x       vdd     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+.ends inv
+
+
+.subckt nmos_d_flip_flop drain gate source body
+M1 drain gate source body CMOSN W={width_N} L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
++ AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+.ends nmos_d_flip_flop
+
+.subckt pmos_d_flip_flop drain gate source body
+M1 drain gate source body CMOSP W={width_P} L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P}
++ AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+.ends pmos_d_flip_flop
+
+
+
+.subckt d_flip_flop out d clk vdd gnd
+x1 m23 d vdd vdd pmos_d_flip_flop 
+x2 m12 clk m23 m23 pmos_d_flip_flop 
+x3 m12 d gnd gnd nmos_d_flip_flop 
+
+x4 m56 clk vdd vdd pmos_d_flip_flop 
+x5 m56 m12 m45 m45 nmos_d_flip_flop 
+x6 m45 clk gnd gnd nmos_d_flip_flop 
+
+x7 m89 m56 vdd vdd pmos_d_flip_flop 
+x8 m89 clk m78 m78 nmos_d_flip_flop 
+x9 m78 m56 gnd gnd nmos_d_flip_flop 
+
+x10 out m89 vdd gnd inv
+.ends d_flip_flop
+
+x38 a0 a00 clk vdd gnd d_flip_flop
+x39 a1 a11 clk vdd gnd d_flip_flop
+x40 a2 a22 clk vdd gnd d_flip_flop
+x41 a3 a33 clk vdd gnd d_flip_flop
+x42 b0 b00 clk vdd gnd d_flip_flop
+x43 b1 b11 clk vdd gnd d_flip_flop
+x44 b2 b22 clk vdd gnd d_flip_flop
+x45 b3 b33 clk vdd gnd d_flip_flop
+
+x46 Cin Cin1 clk vdd gnd d_flip_flop
+
+
+
+.subckt and a b v vdd gnd
+M1_and      w       a       vdd     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+M2_and      w       b       vdd     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+M3_and      w       a       z     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+M4_and      z       b       gnd     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+x1 v w vdd gnd inv 
+.ends and
+
+
+.subckt or a b v vdd gnd
+M1_or      w       a       vdd     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+M2_or      x       b       w     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+M3_or      x       a       gnd     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+M4_or      x       b       gnd     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+x4 v x vdd gnd inv 
+.ends or
+
+.subckt or3 a b c v vdd gnd
+M1_or3      w       a       vdd     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+M2_or3      y       b       w     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+M3_or3     x       c       y     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+M4_or3      x       a       gnd     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+M5_or3      x       b       gnd     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+M6_or3      x       c       gnd     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+x5 v x vdd gnd inv 
+.ends or3
+
+.subckt or4 a b c d v vdd gnd
+M1_or4     w       a       vdd     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+M2_or4     y       b       w     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+M3_or4     t       c       y     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+M4_or4     x       d       t     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+M5_or4     x       a       gnd     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+M6_or4     x       b       gnd     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+M7_or4     x       c       gnd     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+M8_or4     x       d       gnd     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+x6 v x vdd gnd inv 
+.ends or4
+
+.subckt or5 a b c d e v vdd gnd
+M1_or5      w       a       vdd     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+M2_or5      y       b       w     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+M3_or5      t       c       y     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+M4_or5      u       d       t     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+M5_or5      x       e       u     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+M6_or5      x       a       gnd     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+M7_or5      x       b       gnd     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+M8_or5      x       c       gnd     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+M9_or5      x       d       gnd     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+M10_or5      x       e       gnd     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+x101 v x vdd gnd inv 
+.ends or5
+
+.subckt xor x y z vdd gnd
+X111 x_comp x vdd gnd inv
+X222 y_comp y vdd gnd inv
+
+M1_xor temp x_comp y vdd CMOSP  W={width_P}   L={2*LAMBDA} 
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+M2_xor temp x y  gnd CMOSN    W={width_N}    L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+M3_xor temp x y_comp vdd CMOSP  W={width_P}    L={2*LAMBDA} 
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P}  AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+M4_xor temp x_comp y_comp gnd CMOSN  W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}  AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+X333 z temp vdd gnd inv
+
+.ends xor
+
+x12 a0 b0 p0 vdd gnd xor
+x13 a1 b1 p1 vdd gnd xor
+x14 a2 b2 p2 vdd gnd xor
+x15 a3 b3 p3 vdd gnd xor
+
+x16 a0 b0 g0 vdd gnd and
+x17 a1 b1 g1 vdd gnd and
+x18 a2 b2 g2 vdd gnd and
+x19 a3 b3 g3 vdd gnd and
+
+x20 p0 Cin s1 vdd gnd and
+x21 s1 g0 Carry1 vdd gnd or
+
+x22 p1 g0 s2 vdd gnd and
+x23 p1 s1 s3 vdd gnd and
+x24 g1 s2 s3 Carry2 vdd gnd or3
+
+x25 p2 g1 s4 vdd gnd and
+x26 p2 s2 s5 vdd gnd and
+x27 p2 s3 s6 vdd gnd and
+x28 g2 s4 s5 s6 Carry3 vdd gnd or4 
+
+x29 p3 g2 s7 vdd gnd and
+x30 p3 s4 s8 vdd gnd and
+x31 p3 s5 s9 vdd gnd and
+x32 p3 s6 s10 vdd gnd and
+x33 g3 s7 s8 s9 s10 Carry44 vdd gnd or5
+
+
+x34 p0 Cin sum11 vdd gnd xor
+x35 p1 Carry1 sum22 vdd gnd xor
+x36 p2 Carry2 sum33 vdd gnd xor
+x37 p3 Carry3 sum44 vdd gnd xor
+
+x47 Carry4 Carry44 clk vdd gnd d_flip_flop
+
+x48 sum1 sum11 clk vdd gnd d_flip_flop
+x49 sum2 sum22 clk vdd gnd d_flip_flop
+x50 sum3 sum33 clk vdd gnd d_flip_flop
+x51 sum4 sum44 clk vdd gnd d_flip_flop
+
+.tran 0.1n 200n
+
+* .meas tran tpcq TRIG V(a3) VAL=0.9 FALL=1
+* + TARG V(sum33) VAL=0.19 FALL=Z
+.measure tran adderdelay 
++TRIG v(a11) VAL='SUPPLY/2' RISE=1;
++TARG v(sum1) VAL='SUPPLY/2' RISE=1;
+
+.measure tran addertrise 
++TRIG v(sum1) VAL='SUPPLY*0.1' RISE=1;
++TARG v(sum1) VAL='SUPPLY*0.9' RISE=1;
+
+.measure tran addertfall 
++TRIG v(sum1) VAL='SUPPLY*0.9' FALL=1;
++TARG v(sum1) VAL='SUPPLY*0.1' FALL=1;
+
+
+*.measure tran t_prop_delay param='(tpropdelay_r+tpropdelay_f)/2'
+
+.control
+set hcopypscolor = 1 *White background for saving plots
+set color0=white ** color0 is used to set the background of the plot (manual sec:17.7))
+set color1=black ** color1 is used to set the grid color of the plot (manual sec:17.7))
+
+
+
+run
+plot v(a0) 3+v(a1) 6+v(a2) 9+v(a3)
+plot v(sum1) 3+v(sum2) 6+v(sum3) 9+v(sum4) 13+v(Carry4)
+plot v(b0) 3+v(b1) 6+v(b2) 9+v(b3) 13+v(Cin)
+
+
+hardcopy fig_inv_trans.eps v(sum1) 3+v(sum2) 5+v(sum3) 7+v(sum4) 10+v(Carry4)
+.endc

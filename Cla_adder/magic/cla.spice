@@ -1,0 +1,161 @@
+* SPICE3 file created from phani8.ext - technology: scmos
+
+.option scale=0.09u
+
+M1000 a_887_788# P1 VDD w_873_778# CMOSP w=40 l=2
++  ad=760 pd=118 as=4200 ps=1830
+M1001 C2 a_1003_713# VDD w_989_745# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1002 a_868_106# a_858_318# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=3400 ps=1600
+M1003 VDD a_872_66# C4 w_909_24# CMOSP w=40 l=2
++  ad=0 pd=0 as=200 ps=90
+M1004 a_1269_345# P3 a_1269_278# Gnd CMOSN w=40 l=2
++  ad=200 pd=90 as=760 ps=118
+M1005 Gnd a_933_748# a_1003_713# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=200 ps=100
+M1006 a_1249_503# G2 Gnd Gnd CMOSN w=20 l=2
++  ad=300 pd=150 as=0 ps=0
+M1007 a_851_318# G0 a_858_318# w_844_308# CMOSP w=40 l=2
++  ad=1360 pd=388 as=1520 ps=236
+M1008 a_1045_343# a_1036_323# a_1038_343# w_1031_333# CMOSP w=40 l=2
++  ad=960 pd=208 as=1160 ps=298
+M1009 Gnd a_872_66# C4 Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=100 ps=50
+M1010 C3 a_1249_503# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1011 a_851_318# P2 a_858_318# w_844_308# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1012 a_919_108# a_868_106# a_919_87# w_909_24# CMOSP w=160 l=2
++  ad=1600 pd=660 as=1600 ps=660
+M1013 VDD G3 a_919_108# w_909_24# CMOSP w=160 l=2
++  ad=0 pd=0 as=0 ps=0
+M1014 a_887_788# G0 a_887_721# Gnd CMOSN w=40 l=2
++  ad=200 pd=90 as=760 ps=118
+M1015 a_1249_544# G2 VDD w_1235_535# CMOSP w=120 l=2
++  ad=1200 pd=500 as=0 ps=0
+M1016 Gnd a_957_525# a_1249_503# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1017 a_858_318# P3 a_851_318# w_844_308# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1018 a_1045_256# a_1036_323# Gnd Gnd CMOSN w=60 l=2
++  ad=600 pd=260 as=0 ps=0
+M1019 a_868_85# a_1045_343# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1020 a_868_64# a_1269_345# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1021 a_957_525# a_869_565# a_862_565# w_939_555# CMOSP w=40 l=2
++  ad=200 pd=90 as=1160 ps=298
+M1022 VDD P1 a_1085_578# w_1071_568# CMOSP w=40 l=2
++  ad=0 pd=0 as=760 ps=118
+M1023 a_1038_343# P3 a_1045_343# w_1031_333# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1024 a_933_748# a_887_788# VDD w_873_778# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1025 a_887_721# P1 Gnd Gnd CMOSN w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1026 a_1270_544# a_957_525# a_1249_544# w_1235_535# CMOSP w=120 l=2
++  ad=1200 pd=500 as=0 ps=0
+M1027 a_1085_578# a_1036_323# VDD w_1071_568# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1028 a_1131_538# a_1085_578# VDD w_1071_568# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1029 a_1249_503# a_1131_538# Gnd Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1030 a_1045_343# P2 a_1038_343# w_1031_333# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1031 a_1269_345# G2 VDD w_1255_335# CMOSP w=40 l=2
++  ad=760 pd=118 as=0 ps=0
+M1032 a_1066_256# P3 a_1045_256# Gnd CMOSN w=60 l=2
++  ad=600 pd=260 as=0 ps=0
+M1033 a_858_211# P1 Gnd Gnd CMOSN w=80 l=2
++  ad=800 pd=340 as=0 ps=0
+M1034 a_872_66# a_868_64# Gnd Gnd CMOSN w=20 l=2
++  ad=400 pd=200 as=0 ps=0
+M1035 a_1249_503# a_1131_538# a_1270_544# w_1235_535# CMOSP w=120 l=2
++  ad=600 pd=250 as=0 ps=0
+M1036 a_868_106# a_858_318# a_851_318# w_844_308# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1037 a_1045_343# P2 a_1066_256# Gnd CMOSN w=60 l=2
++  ad=300 pd=130 as=0 ps=0
+M1038 VDD P3 a_1269_345# w_1255_335# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1039 Gnd a_868_85# a_872_66# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1040 C2 a_1003_713# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1041 a_1085_578# P1 a_1085_511# Gnd CMOSN w=40 l=2
++  ad=200 pd=90 as=760 ps=118
+M1042 C3 a_1249_503# VDD w_1235_535# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1043 a_879_211# G0 a_858_211# Gnd CMOSN w=80 l=2
++  ad=800 pd=340 as=0 ps=0
+M1044 a_858_318# P2 a_900_211# Gnd CMOSN w=80 l=2
++  ad=400 pd=170 as=800 ps=340
+M1045 a_919_66# a_868_64# a_872_66# w_909_24# CMOSP w=160 l=2
++  ad=1600 pd=660 as=800 ps=330
+M1046 a_868_85# a_1045_343# a_1038_343# w_1116_333# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1047 a_868_64# a_1269_345# VDD w_1255_335# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1048 a_869_565# G0 a_862_565# w_855_555# CMOSP w=40 l=2
++  ad=960 pd=208 as=0 ps=0
+M1049 a_1085_511# a_1036_323# Gnd Gnd CMOSN w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1050 a_872_66# a_868_106# Gnd Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1051 a_919_87# a_868_85# a_919_66# w_909_24# CMOSP w=160 l=2
++  ad=0 pd=0 as=0 ps=0
+M1052 a_869_565# P1 a_862_565# w_855_555# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1053 a_900_211# P3 a_879_211# Gnd CMOSN w=80 l=2
++  ad=0 pd=0 as=0 ps=0
+M1054 a_1003_755# G1 VDD w_989_745# CMOSP w=80 l=2
++  ad=800 pd=340 as=0 ps=0
+M1055 Gnd G3 a_872_66# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1056 a_933_748# a_887_788# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1057 a_869_478# G0 Gnd Gnd CMOSN w=60 l=2
++  ad=600 pd=260 as=0 ps=0
+M1058 a_957_525# a_869_565# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1059 a_862_565# P2 a_869_565# w_855_555# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1060 a_869_565# P1 a_890_478# Gnd CMOSN w=60 l=2
++  ad=300 pd=130 as=600 ps=260
+M1061 VDD G0 a_887_788# w_873_778# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1062 a_1003_713# a_933_748# a_1003_755# w_989_745# CMOSP w=80 l=2
++  ad=400 pd=170 as=0 ps=0
+M1063 a_1269_278# G2 Gnd Gnd CMOSN w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1064 a_1003_713# G1 Gnd Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1065 a_1131_538# a_1085_578# Gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1066 a_858_318# P1 a_851_318# w_844_308# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1067 a_890_478# P2 a_869_478# Gnd CMOSN w=60 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 P2 P3 2.01fF
+C1 a_868_64# Gnd 2.25fF
+C2 a_868_85# Gnd 2.85fF
+C3 P3 Gnd 2.65fF
+C4 VDD Gnd 14.51fF
+C5 a_1036_323# Gnd 4.61fF
+C6 P2 Gnd 4.59fF
+C7 G2 Gnd 4.36fF
+C8 a_957_525# Gnd 4.27fF
+C9 Gnd Gnd 11.50fF
+C10 P1 Gnd 6.56fF
+C11 G0 Gnd 6.21fF
+C12 w_909_24# Gnd 21.83fF
+C13 w_1255_335# Gnd 4.56fF
+C14 w_1031_333# Gnd 4.24fF
+C15 w_844_308# Gnd 7.21fF
+C16 w_1235_535# Gnd 13.40fF
+C17 w_1071_568# Gnd 4.56fF
+C18 w_855_555# Gnd 4.24fF
+C19 w_989_745# Gnd 7.30fF
+C20 w_873_778# Gnd 4.56fF

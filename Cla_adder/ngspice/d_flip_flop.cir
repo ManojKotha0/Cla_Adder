@@ -1,0 +1,93 @@
+.include TSMC_180nm.txt
+.param SUPPLY=1.8
+.param LAMBDA=0.09u
+.global gnd vdd
+
+Vdd	vdd	gnd	'SUPPLY'
+vin1 a00 0 pulse 0 1.8 0ns 0ns 0ns 10ns 20ns
+vin2 b00 0 pulse 1.8 0 0ns 0ns 0ns 10ns 20ns
+
+vin3 a11 0 pulse 0 1.8 0ns 0ns 0ns 10ns 20ns
+vin4 b11 0 pulse 1.8 0 0ns 0ns 0ns 10ns 20ns
+
+vin5 a22 0 pulse 0 1.8 0ns 0ns 0ns 10ns 20ns
+vin6 b22 0 pulse 1.8 0 0ns 0ns 0ns 10ns 20ns
+
+vin7 a33 0 pulse 1.8 0 0ns 0ns 0ns 10ns 20ns
+vin8 b33 0 pulse 0 1.8 0ns 0ns 0ns 10ns 20ns
+
+vin9 Cin1 0 pulse 1.8 0 0ns 0ns 0ns 10ns 20ns
+
+.param width_P={20*LAMBDA}
+.param width_N={10*LAMBDA}
+
+Vclk clk 0 PULSE(0 1.8 0ns 0ns 0ns 4ns 8ns)
+
+
+.subckt inv y x vdd gnd
+M1_inv      y       x       gnd     gnd  CMOSN   W={width_N}   L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+M2_inv      y       x       vdd     vdd  CMOSP   W={width_P}   L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+.ends inv
+
+
+.subckt nmos_d_flip_flop drain gate source body
+M1 drain gate source body CMOSN W={width_N} L={2*LAMBDA}
++ AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
++ AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+.ends nmos_d_flip_flop
+
+.subckt pmos_d_flip_flop drain gate source body
+M1 drain gate source body CMOSP W={width_P} L={2*LAMBDA}
++ AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P}
++ AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+.ends pmos_d_flip_flop
+
+
+
+.subckt d_flip_flop out d clk vdd gnd
+x1 m23 d vdd vdd pmos_d_flip_flop 
+x2 m12 clk m23 m23 pmos_d_flip_flop 
+x3 m12 d gnd gnd nmos_d_flip_flop 
+
+x4 m56 clk vdd vdd pmos_d_flip_flop 
+x5 m56 m12 m45 m45 nmos_d_flip_flop 
+x6 m45 clk gnd gnd nmos_d_flip_flop 
+
+x7 m89 m56 vdd vdd pmos_d_flip_flop 
+x8 m89 clk m78 m78 nmos_d_flip_flop 
+x9 m78 m56 gnd gnd nmos_d_flip_flop 
+
+x10 out m89 vdd gnd inv
+.ends d_flip_flop
+
+x38 a0 a00 clk vdd gnd d_flip_flop
+x39 a1 a11 clk vdd gnd d_flip_flop
+x40 a2 a22 clk vdd gnd d_flip_flop
+x41 a3 a33 clk vdd gnd d_flip_flop
+x42 b0 b00 clk vdd gnd d_flip_flop
+x43 b1 b11 clk vdd gnd d_flip_flop
+x44 b2 b22 clk vdd gnd d_flip_flop
+x45 b3 b33 clk vdd gnd d_flip_flop
+
+x46 Cin Cin1 clk vdd gnd d_flip_flop
+
+.tran 0.1n 200n
+.control
+set hcopypscolor = 1 *White background for saving plots
+set color0=white ** color0 is used to set the background of the plot (manual sec:17.7))
+set color1=black ** color1 is used to set the grid color of the plot (manual sec:17.7))
+
+
+
+run
+plot v(a00) 3+v(a11) 6+v(a22) 9+v(a33)
+plot v(a0) 3+v(a1) 6+v(a2) 9+v(a3)
+plot v(b00) 3+v(b11) 6+v(b22) 9+v(b33) 13+v(Cin1)
+plot v(b0) 3+v(b1) 6+v(b2) 9+v(b3) 13+v(Cin)
+
+
+
+hardcopy d_flip_flop.eps v(b0) 3+v(b1) 6+v(b2) 9+v(b3) 13+v(Cin)
+.endc
